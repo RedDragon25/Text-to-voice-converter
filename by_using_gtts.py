@@ -1,5 +1,4 @@
 from gtts import gTTS
-import os
 
 def text_to_voice_using_gtts(text, lang='en', filename='testing.mp3'):
     try:
