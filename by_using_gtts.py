@@ -1,7 +1,7 @@
 from gtts import gTTS
 import os
 
-def text_to_voice(text, lang='en', filename='test.mp3'):
+def text_to_voice_using_gtts(text, lang='en', filename='testing.mp3'):
     try:
         # Convert text to speech
         tts = gTTS(text=text, lang=lang)
@@ -11,7 +11,3 @@ def text_to_voice(text, lang='en', filename='test.mp3'):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-
-with open("text.txt","r") as f:
-    text = f.read()
-text_to_voice(text)

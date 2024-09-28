@@ -1,4 +1,5 @@
 import pyttsx3
+import by_using_gtts
 
 def text_to_voice(rate, volume, voice, text):
     try:
@@ -48,4 +49,5 @@ if sound is None:
 with open("text.txt","r") as f:
     text = f.read()
 text_to_voice(rate, volume, sound, text)
+by_using_gtts.text_to_voice_using_gtts("Hello ! this is a sample and starting to seeing working of gtts.")
 
