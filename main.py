@@ -1,28 +1,32 @@
 import pyttsx3
 
 def text_to_voice(rate, volume, voice, text):
-    engine = pyttsx3.init()
+    try:
+        engine = pyttsx3.init()
 
-    # Set rate and volume properties
-    engine.setProperty('rate', rate)
-    engine.setProperty('volume', volume)
+        # Set rate and volume properties
+        engine.setProperty('rate', rate)
+        engine.setProperty('volume', volume)
 
-    # Set voice property
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[voice].id)
+        # Set voice property
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[voice].id)
 
-    # engine.say(text)
-    # engine.runAndWait()
-    # engine.stop()
+        # engine.say(text)
+        # engine.runAndWait()
+        # engine.stop()
 
-    # Save voice to a file
-    engine.save_to_file(text, 'test.mp3')
-    engine.runAndWait()
+        # Save voice to a file
+        engine.save_to_file(text, 'test.mp3')
+        engine.runAndWait()
+    
+    except Exception as e:
+        print(print(f"An error occurred: {e}"))
 
 def recognize(voice):
     voice_map = {
-        'm': {'rate': 45, 'volume': 0.4},
-        'f': {'rate': 55, 'volume': 0.6},
+        'm': {'rate': 130, 'volume': 0.6},
+        'f': {'rate': 160, 'volume': 1.0},
         'r': {'rate': 100, 'volume': 0.8}
     }
     return voice_map.get(voice, {'rate': 80, 'volume': 1.0})
